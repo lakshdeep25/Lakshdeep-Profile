@@ -1,0 +1,299 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    z-index: 10;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #0073e6;
+}
+
+/* Menu Toggle for Mobile */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Sidebar */
+aside {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background-color: #f8f9fa;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Profile Section in Sidebar */
+.profile {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid #0073e6;
+}
+
+.profile h1 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+
+.profile p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Center-Aligned Contact Links */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns the contact links */
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center-aligns text and icon together */
+    color: #0073e6;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.contact a:hover {
+    color: #005bb5;
+}
+
+.contact i {
+    margin-right: 0.5rem;
+    font-size: 1.3rem;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    margin-left: 280px;
+    padding: 2rem;
+    width: calc(100% - 280px);
+    overflow-y: auto;
+}
+
+.section {
+    margin-bottom: 2rem;
+    padding-top: 60px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    aside {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 1rem;
+    }
+
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+    }
+
+    main {
+        margin: 0;
+        padding: 1.5rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    aside {
+        padding: 1rem;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contact a {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding-top: 1.5rem;
+    }
+    body {
+        flex-direction: column;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 11;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    header nav ul.show {
+        display: flex;
+    }
+
+    aside {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 1rem;
+    }
+
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile h1 {
+        font-size: 1.4rem;
+    }
+
+    .profile p {
+        font-size: 0.85rem;
+    }
+
+    .contact a {
+        font-size: 0.85rem;
+    }
+
+    main {
+        margin: 0;
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    footer {
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    aside {
+        padding: 1rem;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile h1 {
+        font-size: 1.2rem;
+    }
+
+    .contact a {
+        font-size: 0.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    footer h2 {
+        font-size: 1.3rem;
+    }
+}
